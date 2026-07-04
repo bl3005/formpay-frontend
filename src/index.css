@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --paper: #F9F6EF;
+  --surface: #FFFFFF;
+  --ink: #1A1917;
+  --ink-soft: #57534A;
+  --ink-faint: #908B82;
+  --rule: #E0D9CC;
+  --rule-strong: #C9C1AE;
+  --stamp: #D94F35;
+  --stamp-dark: #B33D26;
+  --stamp-soft: #FBEDE9;
+  --ledger: #27654A;
+  --ledger-soft: #E2EDE8;
+  --blue-soft: #EAF0F8;
+  --blue: #3A5A8A;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: light;
+  color: var(--ink);
+  background-color: var(--paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--paper);
+  background-image: radial-gradient(circle at 1px 1px, rgba(26,25,23,0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-family: 'Fraunces', Georgia, serif;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+p { margin-top: 0; }
+button { font-family: inherit; cursor: pointer; }
+
+:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+select { appearance: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

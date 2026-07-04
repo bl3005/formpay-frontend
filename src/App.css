@@ -1,0 +1,129 @@
+.app-container { min-height: 100vh; }
+
+/* ── Shared form primitives ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.input-primary {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid var(--rule-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  width: 100%;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input-primary:focus {
+  outline: none;
+  border-color: var(--stamp);
+  box-shadow: 0 0 0 3px var(--stamp-soft);
+}
+
+.input-secondary {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--rule);
+  border-radius: 5px;
+  background: var(--surface);
+  color: var(--ink);
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.input-secondary:focus {
+  outline: none;
+  border-color: var(--stamp);
+}
+
+textarea.input-primary,
+textarea.input-secondary { resize: vertical; font-family: 'Inter', sans-serif; }
+
+select.input-primary {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2357534A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.5rem;
+}
+
+/* ── Buttons ── */
+.btn-primary, .btn-submit, .auth-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.925rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  background: var(--ink);
+  color: var(--surface);
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn-primary:hover:not(:disabled),
+.btn-submit:hover:not(:disabled),
+.auth-btn:hover:not(:disabled) {
+  background: var(--stamp);
+}
+
+.btn-primary:active:not(:disabled),
+.btn-submit:active:not(:disabled),
+.auth-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled,
+.btn-submit:disabled,
+.auth-btn:disabled {
+  background: var(--rule-strong);
+  color: var(--ink-faint);
+  cursor: not-allowed;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+.badge-neutral { background: var(--rule); color: var(--ink-soft); }
+.badge-info    { background: var(--blue-soft); color: var(--blue); }
+.badge-success { background: var(--ledger-soft); color: var(--ledger); }
+.badge-warn    { background: var(--stamp-soft); color: var(--stamp-dark); }
+
+/* ── Shared error box ── */
+.auth-error {
+  background: var(--stamp-soft);
+  color: var(--stamp-dark);
+  border: 1px solid var(--stamp);
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}

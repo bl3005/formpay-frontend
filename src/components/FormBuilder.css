@@ -1,0 +1,229 @@
+.form-builder { width: 100%; }
+
+.form-builder-header {
+  padding: 1.5rem 1.75rem 1.25rem;
+  border-bottom: 1.5px solid var(--rule);
+}
+
+.form-builder-header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.form-builder-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 420px;
+}
+
+/* ── Sidebar ── */
+.form-builder-sidebar {
+  border-right: 1.5px solid var(--rule);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: var(--paper);
+}
+
+.form-builder-sidebar h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+}
+
+.btn-add-field {
+  padding: 0.6rem 0.75rem;
+  background: var(--surface);
+  border: 1.5px solid var(--rule-strong);
+  border-radius: 5px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: all 0.12s;
+  width: 100%;
+}
+
+.btn-add-field:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--surface);
+}
+
+/* ── Canvas ── */
+.form-builder-canvas {
+  padding: 1.5rem 1.75rem;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-builder-canvas form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  flex: 1;
+}
+
+/* Override gap for form-group inside canvas */
+.form-builder-canvas .form-group { gap: 0.4rem; margin: 0; }
+
+/* ── Form meta fields row ── */
+.form-meta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Payment row ── */
+.payment-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: var(--paper);
+  border: 1.5px solid var(--rule);
+  border-radius: 6px;
+  flex-wrap:nowrap;
+}
+
+.payment-row .checkbox-group { flex: 1; }
+
+.price-field { width: 160px; flex-shrink: 0; flex-grow: 0;}
+.price-field .input-primary{
+  width: 160px;
+  min-width: 0;
+}
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.checkbox-label input[type="checkbox"] {
+  accent-color: var(--stamp);
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ── Fields container ── */
+.fields-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: var(--paper);
+  border: 1.5px dashed var(--rule-strong);
+  border-radius: 6px;
+  color: var(--ink-faint);
+  font-size: 0.875rem;
+}
+
+/* ── Field editor card ── */
+.field-editor-card {
+  border: 1.5px solid var(--rule-strong);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.field-editor-header {
+  background: var(--ink);
+  padding: 0.45rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field-type-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.btn-remove {
+  background: transparent;
+  border: none;
+  color: var(--paper);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0 0.2rem;
+  opacity: 0.65;
+  transition: opacity 0.1s;
+}
+.btn-remove:hover { opacity: 1; color: #ff7f6e; }
+
+.field-editor-body {
+  padding: 0.9rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.field-editor-body .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.field-editor-body .checkbox-wrap {
+  grid-column: 1 / -1;
+}
+
+/* ── Save button ── */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--rule-strong);
+  margin-top: auto;
+}
+
+.form-actions .btn-submit {
+  padding: 0.7rem 1.75rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .form-builder-body {
+    grid-template-columns: 1fr;
+  }
+
+  .form-builder-sidebar {
+    border-right: none;
+    border-bottom: 1.5px solid var(--rule);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 1rem;
+  }
+
+  .btn-add-field { width: auto; flex: 1 1 calc(50% - 0.4rem); text-align: center; }
+
+  .form-meta-row { grid-template-columns: 1fr; }
+
+  .payment-row { flex-direction: column; }
+  .price-field { width: 100%; }
+
+  .field-editor-body { grid-template-columns: 1fr; }
+  .field-editor-body .form-group.full-width { grid-column: 1; }
+}
